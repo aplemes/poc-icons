@@ -1,0 +1,57 @@
+{
+  "name": "@azulejo/icons",
+  "version": "0.1.0",
+  "description": "Azulejo SVG icons for Vue 3 — a single AzIcon component that loads each icon on demand.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./icons/*": {
+      "types": "./dist/generated/icons/*.d.ts",
+      "import": "./dist/generated/icons/*.js"
+    },
+    "./names": {
+      "types": "./dist/names.d.ts",
+      "import": "./dist/names.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "generate": "node scripts/generate-icons.ts",
+    "build": "pnpm generate && vite build && tsc -p tsconfig.build.json",
+    "test": "pnpm generate && vitest run",
+    "test:watch": "vitest",
+    "typecheck": "pnpm generate && tsc -p tsconfig.json --noEmit",
+    "prepack": "pnpm build"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.18.0",
+    "@vue/server-renderer": "^3.5.43",
+    "@vue/test-utils": "^2.5.1",
+    "happy-dom": "^20.14.5",
+    "svgo": "^4.1.0",
+    "typescript": "~6.0.3",
+    "vite": "^8.3.1",
+    "vitest": "^5.0.2",
+    "vue": "^3.5.43"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

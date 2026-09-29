@@ -1,0 +1,32 @@
+{
+  "name": "azulejo-icons-workspace",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.8.1",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "generate": "pnpm --filter @azulejo/icons generate",
+    "build": "pnpm --filter @azulejo/icons build",
+    "test": "pnpm --filter @azulejo/icons test",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "playground": "pnpm build && pnpm --filter @azulejo/playground dev",
+    "benchmark": "pnpm build && node benchmark/run.ts",
+    "benchmark:nuxt": "pnpm build && node benchmark/nuxt.ts"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^22.18.0",
+    "eslint": "^10.11.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-vue": "^10.11.1",
+    "globals": "^17.12.0",
+    "prettier": "^3.9.9",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.71.0"
+  }
+}

@@ -1,0 +1,7 @@
+node_modules
+dist
+pnpm-lock.yaml
+packages/icons/svg
+packages/icons/src/generated
+benchmark/.work
+benchmark/results
