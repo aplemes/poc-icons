@@ -7,6 +7,7 @@
  */
 import { resolve } from 'node:path'
 import { parseArgs } from 'node:util'
+import { aliases } from '../icons.config.ts'
 import { AZ_ICON_SIZE_MAP } from '../src/sizes.ts'
 import { GenerationError, generateIcons } from './lib/generate.ts'
 
@@ -21,10 +22,11 @@ const sourceSizes = [...new Set(Object.values(AZ_ICON_SIZE_MAP))]
 
 try {
   const started = performance.now()
-  const report = generateIcons({ sourceDir, outDir, sourceSizes })
+  const report = generateIcons({ sourceDir, outDir, sourceSizes, aliases })
   const multicolor = report.icons.filter((icon) => icon.colorMode === 'multi')
   console.log(
-    `Generated ${report.icons.length} icons (${sourceSizes.length} sizes each) from ${sourceDir}`,
+    `Generated ${report.icons.length} icons (${sourceSizes.length} sizes each) and ` +
+      `${report.aliases.length} aliases from ${sourceDir}`,
   )
   console.log(
     `  ${report.written.length} files written, ${report.removed.length} removed, ` +

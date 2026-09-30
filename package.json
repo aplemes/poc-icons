@@ -10,7 +10,7 @@
     "generate": "pnpm --filter @azulejo/icons generate",
     "build": "pnpm --filter @azulejo/icons build",
     "test": "pnpm --filter @azulejo/icons test",
-    "typecheck": "pnpm -r typecheck",
+    "typecheck": "pnpm build && pnpm -r typecheck",
     "lint": "eslint . --max-warnings 0",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

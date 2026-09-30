@@ -42,7 +42,7 @@ const filtered = computed(() => names.value.filter((name) => name.includes(query
       <h2>Static names</h2>
       <p class="row">
         <AzIcon icon="search" :size="size" />
-        <AzIcon icon="arrow-next" :size="size" />
+        <AzIcon icon="arrow-right" :size="size" />
         <AzIcon icon="swap-left" :size="size" />
         <AzIcon icon="notification" :size="size" label="Notifications" />
         <AzIcon icon="cart" :size="size" class="accent" />

@@ -38,18 +38,18 @@
     "expectedIcons": 1,
     "initialFiles": [
       {
-        "file": "assets/index-CnHx997I.js",
+        "file": "assets/index-D0ct9uU5.js",
         "size": {
           "raw": 63591,
           "gzip": 24849,
-          "brotli": 22632
+          "brotli": 22631
         }
       }
     ],
     "initial": {
       "raw": 63591,
       "gzip": 24849,
-      "brotli": 22632
+      "brotli": 22631
     },
     "iconChunks": 449,
     "iconChunksSize": {
@@ -59,8 +59,8 @@
     },
     "iconsInInitial": [],
     "requestedAtRuntime": [
-      "assets/index-CnHx997I.js",
-      "assets/icon-loaders-UxySXjv2.js",
+      "assets/index-D0ct9uU5.js",
+      "assets/icon-loaders-BwnA5jGx.js",
       "assets/search-DqVMGyBu.js"
     ],
     "iconsRequestedAtRuntime": [
@@ -68,11 +68,11 @@
     ],
     "otherRequestedAtRuntime": [
       {
-        "file": "assets/icon-loaders-UxySXjv2.js",
+        "file": "assets/icon-loaders-BwnA5jGx.js",
         "size": {
-          "raw": 27551,
-          "gzip": 7247,
-          "brotli": 6491
+          "raw": 27849,
+          "gzip": 7275,
+          "brotli": 6530
         }
       }
     ],
@@ -84,18 +84,18 @@
     "expectedIcons": 10,
     "initialFiles": [
       {
-        "file": "assets/index-5dEafQqx.js",
+        "file": "assets/index-Be451XYD.js",
         "size": {
           "raw": 63925,
-          "gzip": 24915,
-          "brotli": 22684
+          "gzip": 24916,
+          "brotli": 22627
         }
       }
     ],
     "initial": {
       "raw": 63925,
-      "gzip": 24915,
-      "brotli": 22684
+      "gzip": 24916,
+      "brotli": 22627
     },
     "iconChunks": 449,
     "iconChunksSize": {
@@ -105,8 +105,8 @@
     },
     "iconsInInitial": [],
     "requestedAtRuntime": [
-      "assets/index-5dEafQqx.js",
-      "assets/icon-loaders--w0QnJTZ.js",
+      "assets/index-Be451XYD.js",
+      "assets/icon-loaders-CUnEfYNy.js",
       "assets/search-DqVMGyBu.js",
       "assets/home-BwbjbUJX.js",
       "assets/cart-kyRKBe-b.js",
@@ -132,11 +132,11 @@
     ],
     "otherRequestedAtRuntime": [
       {
-        "file": "assets/icon-loaders--w0QnJTZ.js",
+        "file": "assets/icon-loaders-CUnEfYNy.js",
         "size": {
-          "raw": 27551,
-          "gzip": 7247,
-          "brotli": 6495
+          "raw": 27849,
+          "gzip": 7275,
+          "brotli": 6526
         }
       }
     ],
@@ -148,18 +148,18 @@
     "expectedIcons": 100,
     "initialFiles": [
       {
-        "file": "assets/index-vCmfNjzO.js",
+        "file": "assets/index-qx9PnzCI.js",
         "size": {
           "raw": 67424,
-          "gzip": 25491,
-          "brotli": 23246
+          "gzip": 25490,
+          "brotli": 23248
         }
       }
     ],
     "initial": {
       "raw": 67424,
-      "gzip": 25491,
-      "brotli": 23246
+      "gzip": 25490,
+      "brotli": 23248
     },
     "iconChunks": 449,
     "iconChunksSize": {
@@ -169,8 +169,8 @@
     },
     "iconsInInitial": [],
     "requestedAtRuntime": [
-      "assets/index-vCmfNjzO.js",
-      "assets/icon-loaders-C1KVQOJb.js",
+      "assets/index-qx9PnzCI.js",
+      "assets/icon-loaders-CGTvxggY.js",
       "assets/search-DqVMGyBu.js",
       "assets/home-BwbjbUJX.js",
       "assets/cart-kyRKBe-b.js",
@@ -376,11 +376,11 @@
     ],
     "otherRequestedAtRuntime": [
       {
-        "file": "assets/icon-loaders-C1KVQOJb.js",
+        "file": "assets/icon-loaders-CGTvxggY.js",
         "size": {
-          "raw": 27551,
-          "gzip": 7244,
-          "brotli": 6483
+          "raw": 27849,
+          "gzip": 7276,
+          "brotli": 6528
         }
       }
     ],
@@ -392,18 +392,18 @@
     "expectedIcons": 449,
     "initialFiles": [
       {
-        "file": "assets/index-qZSIF-Ai.js",
+        "file": "assets/index--mj1mtKj.js",
         "size": {
           "raw": 1470496,
-          "gzip": 466981,
-          "brotli": 373405
+          "gzip": 466983,
+          "brotli": 373465
         }
       }
     ],
     "initial": {
       "raw": 1470496,
-      "gzip": 466981,
-      "brotli": 373405
+      "gzip": 466983,
+      "brotli": 373465
     },
     "iconChunks": 0,
     "iconChunksSize": {
@@ -863,7 +863,7 @@
       "zloty"
     ],
     "requestedAtRuntime": [
-      "assets/index-qZSIF-Ai.js"
+      "assets/index--mj1mtKj.js"
     ],
     "iconsRequestedAtRuntime": [],
     "otherRequestedAtRuntime": [],

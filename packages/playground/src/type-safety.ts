@@ -9,6 +9,8 @@ h(AzIcon, { icon: 'search' })
 h(AzIcon, { icon: 'search', size: 24 })
 h(AzIcon, { icon: 'search', size: '24' })
 h(AzIcon, { icon: 'search', label: 'Search' })
+// An alias is a valid name.
+h(AzIcon, { icon: 'arrow-right' })
 
 // @ts-expect-error unknown icon name
 h(AzIcon, { icon: 'not-an-icon' })
