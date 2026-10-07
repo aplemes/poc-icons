@@ -205,7 +205,7 @@ Nenhuma configuração é necessária. No servidor, a renderização espera o í
 
 ## Como adicionar novos ícones
 
-1. Coloque os SVGs em [`svg/`](svg), um arquivo por tamanho, seguindo `<categoria>_<nome>_<tamanho>.svg`:
+1. Coloque os 5 SVGs em [`svg/`](svg), seguindo `<categoria>_<nome>_<tamanho>.svg`:
 
    ```text
    ui_arrow-right_20.svg
@@ -219,20 +219,7 @@ Nenhuma configuração é necessária. No servidor, a renderização espera o í
 
 O ícone passa a existir como `arrow-right`, com tipo, loader e chunk próprios. Nada mais precisa ser editado.
 
-Regras:
-
-- O nome público é o trecho do meio, em minúsculas. A categoria não faz parte dele.
-- Os 5 tamanhos são obrigatórios.
-- `viewBox` é obrigatório.
-- Não são aceitos `<script>`, `<foreignObject>`, `<image>`, atributos `on*` nem referências externas.
-
-Para ler os SVGs de outro lugar, por exemplo direto do repositório do Mozaic:
-
-```bash
-pnpm generate --source /caminho/para/mozaic-icons/src/icons/SVG
-# ou
-AZ_ICONS_SOURCE=/caminho/para/SVG pnpm generate
-```
+O guia completo, com as regras de nome e conteúdo, a verificação, os erros possíveis e como remover ou renomear, está em [docs/adicionar-icone.md](../../docs/adicionar-icone.md).
 
 ## Como executar a geração
 

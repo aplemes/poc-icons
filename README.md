@@ -98,6 +98,7 @@ Props, eventos, `preloadIcons`, `registerIcons` para ícones críticos, lista co
 | [`packages/icons`](packages/icons)           | A biblioteca. A documentação está no [README](packages/icons/README.md). |
 | [`packages/playground`](packages/playground) | Aplicação Vue que consome a biblioteca pelo `exports` do pacote.         |
 | [`benchmark`](benchmark)                     | Benchmark de bundle e verificação com Nuxt, usando o tarball do pacote.  |
+| [`docs`](docs)                               | Guias: [como adicionar um novo ícone](docs/adicionar-icone.md).          |
 
 ## Requisitos
 
