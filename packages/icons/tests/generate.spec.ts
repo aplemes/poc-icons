@@ -208,52 +208,6 @@ describe('generateIcons', () => {
   })
 })
 
-describe('aliases', () => {
-  const generate = (aliases: Record<string, string>, outDir = tempDir()) =>
-    generateIcons({ sourceDir: join(fixtures, 'valid'), outDir, sourceSizes, aliases })
-
-  it('adds the alias to the names and points its loader to the chunk of the target', () => {
-    const outDir = tempDir()
-    const report = generate({ square: 'fill-only' }, outDir)
-    const files = snapshot(outDir)
-
-    expect(report.aliases).toEqual([['square', 'fill-only']])
-    expect(files['icon-names.ts']).toContain(`| 'square'`)
-    expect(files['icon-loaders.ts']).toContain(`'square': () => import('./icons/fill-only.js'),`)
-    expect(files['icon-list.ts']).toContain(`'square': 'fill-only',`)
-  })
-
-  it('does not duplicate the drawing', () => {
-    const outDir = tempDir()
-    generate({ square: 'fill-only' }, outDir)
-
-    expect(Object.keys(snapshot(outDir))).not.toContain('icons/square.ts')
-  })
-
-  it('keeps the names sorted, whatever the order of the aliases', () => {
-    const first = tempDir()
-    const second = tempDir()
-    generate({ zebra: 'wide', apple: 'clipped' }, first)
-    generate({ apple: 'clipped', zebra: 'wide' }, second)
-    const names = [...snapshot(first)['icon-names.ts']!.matchAll(/\| '([^']+)'/g)].map((m) => m[1])
-
-    expect(names).toEqual([...names].sort())
-    expect(names[0]).toBe('apple')
-    expect(snapshot(first)).toEqual(snapshot(second))
-  })
-
-  it.each([
-    [{ square: 'missing' }, 'the target icon does not exist'],
-    [{ wide: 'fill-only' }, 'an icon with this name already exists'],
-    [{ Square_One: 'fill-only' }, 'the alias must be kebab-case'],
-  ])('rejects %j: %s', (aliases, problem) => {
-    const outDir = tempDir()
-
-    expect(() => generate(aliases, outDir)).toThrowError(problem)
-    expect(readdirSync(outDir)).toEqual([])
-  })
-})
-
 describe('library source', () => {
   it('generates every icon of the real SVG source', () => {
     const report = generateIcons({

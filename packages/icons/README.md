@@ -226,32 +226,6 @@ Regras:
 - `viewBox` é obrigatório.
 - Não são aceitos `<script>`, `<foreignObject>`, `<image>`, atributos `on*` nem referências externas.
 
-### Aliases
-
-Um alias é um segundo nome público para um ícone que já existe. Eles ficam em [`icons.config.ts`](icons.config.ts):
-
-```ts
-export const aliases = {
-  'arrow-left': 'arrow-back',
-  'arrow-right': 'arrow-next',
-  'arrow-up': 'arrow-top',
-  'arrow-down': 'arrow-bottom',
-  close: 'cross',
-}
-```
-
-| Alias         | Ícone na fonte |
-| ------------- | -------------- |
-| `arrow-left`  | `arrow-back`   |
-| `arrow-right` | `arrow-next`   |
-| `arrow-up`    | `arrow-top`    |
-| `arrow-down`  | `arrow-bottom` |
-| `close`       | `cross`        |
-
-O alias aponta para o chunk do ícone original, então o desenho não é duplicado. Os dois nomes são válidos em `AzIconName`. A geração falha se o alias repetir o nome de um ícone ou apontar para um ícone inexistente.
-
-O import estático usa sempre o nome original: `@azulejo/icons/icons/arrow-next`.
-
 Para ler os SVGs de outro lugar, por exemplo direto do repositório do Mozaic:
 
 ```bash
@@ -331,16 +305,16 @@ Resultado com 449 ícones, Vite 8.3.1 e Vue 3.5.43:
 | Cenário                                     | Bundle inicial (gzip) | Acima da base | Ícones no bundle inicial | Chunks de ícone requisitados |
 | ------------------------------------------- | --------------------: | ------------: | -----------------------: | ---------------------------: |
 | Base: aplicação Vue sem a biblioteca        |              23,00 kB |             — |                        0 |                            0 |
-| A: 1 ícone                                  |              24,27 kB |       1,26 kB |                        0 |                            1 |
-| B: 10 ícones                                |              24,33 kB |       1,33 kB |                        0 |                           10 |
-| C: 100 ícones                               |              24,89 kB |       1,89 kB |                        0 |                          100 |
+| A: 1 ícone                                  |              24,33 kB |       1,32 kB |                        0 |                            1 |
+| B: 10 ícones                                |              24,39 kB |       1,38 kB |                        0 |                           10 |
+| C: 100 ícones                               |              24,94 kB |       1,93 kB |                        0 |                          100 |
 | Referência: os 449 importados estaticamente |             456,03 kB |     433,03 kB |                      449 |                            0 |
 
 O crescimento entre A e C vem do template da própria aplicação, que tem 100 tags.
 
 Além do bundle inicial, a aplicação baixa sob demanda:
 
-- o registro de ícones, uma vez: 7,10 kB gzip;
+- o registro de ícones, uma vez: 7,08 kB gzip;
 - um chunk por ícone usado: 1,17 kB gzip em média.
 
 ## Como fazer build
@@ -393,9 +367,9 @@ Um `import()` literal com caminho relativo é ESM padrão: Vite, Rollup, webpack
 
 ### Registro carregado sob demanda
 
-O mapa tem 449 entradas e, no build do consumidor, cada uma ganha um hash no nome do arquivo. Hashes não comprimem: o mapa pesa 7,10 kB gzip.
+O mapa tem 449 entradas e, no build do consumidor, cada uma ganha um hash no nome do arquivo. Hashes não comprimem: o mapa pesa 7,08 kB gzip.
 
-Na primeira versão ele fazia parte do bundle inicial, que ficava 8,48 kB acima da base. Como chunk separado, o custo caiu para 1,26 kB.
+Na primeira versão ele fazia parte do bundle inicial, que ficava 8,48 kB acima da base. Como chunk separado, o custo caiu para 1,32 kB.
 
 A contrapartida é uma requisição a mais antes do primeiro ícone de uma SPA. Ela acontece uma vez por sessão. Em SSR não tem efeito, porque o ícone já vem no HTML. Para ícones críticos em SPA, use `registerIcons`.
 

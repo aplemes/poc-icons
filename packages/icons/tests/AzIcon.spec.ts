@@ -413,33 +413,13 @@ describe('loading on demand', () => {
   })
 })
 
-describe('aliases', () => {
-  it('renders the drawing of the target icon', async () => {
-    const library = await freshLibrary()
-    const alias = mountIcon(library, { icon: 'arrow-right' })
-    const target = mountIcon(library, { icon: 'arrow-next' })
-    await whenLoaded(library, 'arrow-right', 'arrow-next')
-
-    expect(alias.find('path').exists()).toBe(true)
-    expect(alias.element.innerHTML).toBe(target.element.innerHTML)
-  })
-
-  it('accepts the alias as an icon name', () => {
-    expectTypeOf<'arrow-right' | 'arrow-left' | 'close'>().toExtend<AzIconName>()
-    expect(isAzIconName('arrow-right')).toBe(true)
-    expect(isAzIconName('close')).toBe(true)
-  })
-})
-
 describe('registry', () => {
   it('has a loader for every generated icon and nothing loaded up front', async () => {
     await freshLibrary()
     const { iconLoaders } = await import('../src/generated/icon-loaders.ts')
-    const { azIconAliases, azIconNames } = await import('../src/names.ts')
+    const { azIconNames } = await import('../src/names.ts')
 
-    expect(Object.keys(iconLoaders).sort()).toEqual(
-      [...azIconNames, ...Object.keys(azIconAliases)].sort(),
-    )
+    expect(Object.keys(iconLoaders)).toEqual(azIconNames)
     expect(azIconNames.length).toBeGreaterThanOrEqual(400)
     for (const loader of Object.values(iconLoaders)) expect(loader).toBeTypeOf('function')
   })
